@@ -1,0 +1,2 @@
+Scripts similar to GTEx
+Exception that we summed all count for the total coverage, no split by tissue

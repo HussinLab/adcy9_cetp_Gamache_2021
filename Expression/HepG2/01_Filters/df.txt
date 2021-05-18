@@ -1,0 +1,11 @@
+SampleID	Type	Condition
+Scr.1	KO	Control
+Scr.2	KO	Control
+Scr.3	KO	Control
+Scr.4	KO	Control
+Scr.5	KO	Control
+si.1039.1	KO	Alt1
+si.1039.2	KO	Alt1
+si.1039.3	KO	Alt1
+si.1039.4	KO	Alt1
+si.1039.5	KO	Alt1

@@ -1,0 +1,16 @@
+
+VCFtools - 0.1.16
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf ../../Data/vcf/vcf/ADCY9_CETP.HigherRedAndean.Biallele.MafSingleton.recode.vcf
+	--hardy
+	--out hwe.HigherRedAndean
+	--snp rs158477
+	--snp rs1967309
+
+Warning: Expected at least 2 parts in INFO entry: ID=PR,Number=0,Type=Flag,Description="Provisional reference allele, may not be based on real reference genome">
+After filtering, kept 60 out of 60 Individuals
+Outputting HWE statistics (but only for biallelic loci)
+After filtering, kept 2 out of a possible 514 Sites
+Run Time = 0.00 seconds
