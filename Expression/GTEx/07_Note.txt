@@ -1,4 +1,0 @@
-1- Extract gene that you want to analyse
-2- Extract others covariates from disponible phenotypes in GTEx
-3- Extract SNP
-4- Linear regression on R

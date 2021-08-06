@@ -1,10 +1,9 @@
 library(ggplot2)
-library('reshape2')
 
-print('Figure 5b')
+
+print('Figure 6b,c')
 
 # Cardiovascular
-
 data=read.table('CAD.txt', sep='\t', header=TRUE)
 
 # Factorize data
@@ -47,10 +46,11 @@ bm=data
 
 # Plot results
 
-png('UK.CAD.png', height=150,width=1200)
+# png('UK.CAD.png', height=150,width=1200)
+pdf('UK.CAD.pdf', height=1.7,width=12)
 xlim=range(c(exp(cad$AME),exp(cad$AME-cad$SE*1.959964),exp(cad$AME+cad$SE*1.959964),exp(bm$AME),exp(bm$AME-bm$SE*1.959964),exp(bm$AME+bm$SE*1.959964)))
 
-g=ggplot(cad,aes(col=rs1967309_fac,x=endpoint,y=exp(AME)))+geom_point(position = position_dodge(0.7), size=2)+geom_pointrange(size=1.3,aes(x=endpoint,ymin=exp(AME-SE*1.959964),ymax=exp(AME+SE*1.959964)),position = position_dodge(0.7))+geom_hline(yintercept=1,linetype='dashed',color='grey30',size=2)+ coord_flip()+facet_wrap(~male)+colScale+ylim(c(0.75,1.25))
+g=ggplot(cad,aes(col=rs1967309_fac,x=endpoint,y=exp(AME)))+geom_point(position = position_dodge(0.7), size=2)+geom_pointrange(size=1,aes(x=endpoint,ymin=exp(AME-SE*1.959964),ymax=exp(AME+SE*1.959964)),position = position_dodge(0.7))+geom_hline(yintercept=1,linetype='dashed',color='grey30',size=1.2)+ coord_flip()+facet_wrap(~male)+colScale+ylim(c(0.75,1.25))
 
 
 g=g+ theme_bw()+ theme(strip.text.x=element_blank(),panel.spacing=unit(2,'lines'),panel.grid.major = element_blank(),  panel.grid.minor = element_blank(),  panel.border=element_rect(colour='black', linetype='solid'), axis.text.x=element_text(color='black'),axis.text.y=element_text(color='black'),legend.position="none", axis.text=element_text(color='black'))
@@ -58,10 +58,11 @@ g=g+ theme_bw()+ theme(strip.text.x=element_blank(),panel.spacing=unit(2,'lines'
 
 print(g)
 
-png('UK.BM.png', height=380,width=1200)
+# png('UK.BM.png', height=380,width=1200)
+pdf('UK.BM.pdf', height=4,width=12)
 xlim=range(c(exp(cad$AME),exp(cad$AME-cad$SE*1.959964),exp(cad$AME+cad$SE*1.959964),exp(bm$AME),exp(bm$AME-bm$SE*1.959964),exp(bm$AME+bm$SE*1.959964)))
 
-g=ggplot(bm,aes(col=rs1967309_fac,x=endpoint,y=exp(AME)))+geom_point(position = position_dodge(0.7), size=2)+geom_pointrange(size=1.3,aes(x=endpoint,ymin=exp(AME-SE*1.959964),ymax=exp(AME+SE*1.959964)),position = position_dodge(0.7))+geom_hline(yintercept=1,linetype='dashed',color='grey30',size=2)+ coord_flip()+facet_wrap(~male)+colScale+ylim(c(0.9,1.1))
+g=ggplot(bm,aes(col=rs1967309_fac,x=endpoint,y=exp(AME)))+geom_point(position = position_dodge(0.8), size=2)+geom_pointrange(size=1.1,aes(x=endpoint,ymin=exp(AME-SE*1.959964),ymax=exp(AME+SE*1.959964)),position = position_dodge(0.8))+geom_hline(yintercept=1,linetype='dashed',color='grey30',size=1.2)+ coord_flip()+facet_wrap(~male)+colScale+ylim(c(0.9,1.1))
 
 
 g=g+ theme_bw()+ theme(strip.text.x=element_blank(),panel.spacing=unit(2,'lines'),panel.grid.major = element_blank(),  panel.grid.minor = element_blank(),  panel.border=element_rect(colour='black', linetype='solid'), axis.text.x=element_text(color='black'),axis.text.y=element_text(color='black'),legend.position="none", axis.text=element_text(color='black'))

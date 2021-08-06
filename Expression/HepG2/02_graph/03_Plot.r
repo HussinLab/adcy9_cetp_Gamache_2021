@@ -4,7 +4,7 @@ library("plyr")
 library('ggpubr')
 library(ggplot2)
 
-print('Figure 4a')
+print('Figure 5a')
 
 ##########################################
 ######							##########
@@ -23,7 +23,7 @@ for_hepG2KO=function(data){
 	number=c()
 	type=c()
 
-	#Uniform name
+	#Uniformize name
 	while(i<=ncol(data)){
 		t=unlist(strsplit(colnames(data)[i],'.',fixed=TRUE))
 		number=c(number,t[3])
@@ -66,7 +66,7 @@ for_hepG2KO=function(data){
 	data=rbind(data,data2)
 
 
-	print(ggplot(data,aes(y=Expression,fill=experiment,x=Gene))+geom_boxplot(outlier.shape=NA)+geom_jitter(position=position_dodge(0.75), size=2)+theme(axis.text=element_text(size=20), panel.background=element_rect(fill='white', color='black'), legend.position=c(0.85,0.92),legend.title=element_blank(),legend.text=element_text(size=15))+scale_fill_manual(values=c('#56B4E9','#D55E00')))
+	print(ggplot(data,aes(y=Expression,fill=experiment,x=Gene))+geom_boxplot(outlier.shape=NA)+geom_jitter(position=position_dodge(0.75), size=2)+theme(axis.text=element_text(size=5), panel.background=element_rect(fill='white', color='black'), legend.position=c(0.16,0.08),legend.title=element_blank(),legend.text=element_text(size=15,color=NA))+scale_fill_manual(values=c('#56B4E9','#D55E00'))+theme(legend.key.size = unit(2,"line"))+ theme(legend.key=element_blank())+ylim(-4,6.1))
 	
 
 
@@ -79,7 +79,7 @@ for_hepG2KO=function(data){
 ##########################################
 
 
-png('hepG2KO.no205.CETP.RSEM.Hg38.png',width=500, height=500)
+pdf('hepG2KO.no205.CETP.RSEM.Hg38.pdf',width=7, height=7)
 data_all=read.table(paste(c("genesExpressionTable.Hg38.gene6_5.normalizedVoom.ADCY9_CETP.ScrSi.txt"),collapse=""),row.names=1,header=TRUE)
 for_hepG2KO(data_all)
 
