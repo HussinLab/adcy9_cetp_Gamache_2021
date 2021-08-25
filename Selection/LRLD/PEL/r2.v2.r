@@ -10,12 +10,12 @@ print('Figure 3a,b and 4')
 # 5 = rs1967309 in CETP - Female
 # 6 = Top 4 SNPs in ADCY9 - Female
 
-plot=1
+plot=5
 
 if(plot==2){
 	pdf(paste(c('r2.',plot,'.pdf'),collapse=''),width=15, height=7.5)
 
-}else if(plot==1){
+}else if(plot%in%c(1,3,5)){
 	pdf(paste(c('r2.',plot,'.pdf'),collapse=''),width=7.5, height=7.5)
 
 }else{

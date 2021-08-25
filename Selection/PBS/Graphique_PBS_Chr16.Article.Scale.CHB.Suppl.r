@@ -1,7 +1,8 @@
 #!/usr/bin/env Rscript
 library("data.table")
+library("scales")
 
-print('Figure 2c & 4a,b')
+print('Figure child 4-1')
 
 
 freadf <- function(...) return(as.data.frame(fread(...)))
@@ -37,7 +38,8 @@ exonADCY9=exonADCY9/diviseur
 exonADCY9$ydown=-0.02
 exonADCY9$yup=-0.01
 
-for(s in c('All','MALE','FEMALE')){
+# for(s in c('All','MALE','FEMALE')){
+for(s in c('MALE','FEMALE')){
 	print('Begin read')
 	# Coordinate kept from all chromosomes in readed files : chr16; 4002650-4176186
 	if(s=='All'){
@@ -92,12 +94,12 @@ for(s in c('All','MALE','FEMALE')){
 	plot(x=dataNormZ$Position,y=dataNormZ$MXL, xlim=xlim, col=cMXL,ylim=ylim, xlab='',ylab='',xaxt="n",yaxt="n", lwd=1, bty='n')
 
 	# Plot value for rs1967309
+	# par(new=TRUE)
+	# plot(x=4065583/diviseur,y=dataNormZ['4065583','MXL'], xlim=xlim,pch=22, col='black',ylim=ylim, xlab='',ylab='',cex=2,xaxt="n",yaxt="n",lwd=2, bty='n')
+	# par(new=TRUE)
+	# plot(x=4065583/diviseur,y=dataNormZ['4065583','CHB'], xlim=xlim,pch=23, col='black',ylim=ylim, xlab='',ylab='',cex=2,xaxt="n",yaxt="n",lwd=2, bty='n')
 	par(new=TRUE)
-	plot(x=4065583/diviseur,y=dataNormZ['4065583','MXL'], xlim=xlim,pch=22, col='black',ylim=ylim, xlab='',ylab='',cex=2,xaxt="n",yaxt="n",lwd=2, bty='n')
-	par(new=TRUE)
-	plot(x=4065583/diviseur,y=dataNormZ['4065583','CHB'], xlim=xlim,pch=23, col='black',ylim=ylim, xlab='',ylab='',cex=2,xaxt="n",yaxt="n",lwd=2, bty='n')
-	par(new=TRUE)
-	plot(x=4065583/diviseur,y=dataNormZ['4065583','PEL'], xlim=xlim,pch=24, col='black',ylim=ylim, xlab='',ylab='',cex=2,xaxt="n",yaxt="n",lwd=2)
+	plot(x=4065583/diviseur,y=dataNormZ['4065583','PEL'], xlim=xlim, col='black',ylim=ylim, xlab='',ylab='',cex=2.4,xaxt="n",yaxt="n",lwd=4, bg=cPEL)
 
 	# Added the gene under the graph
 	par(new=TRUE)
@@ -122,6 +124,6 @@ for(s in c('All','MALE','FEMALE')){
 	abline(v=4077442/diviseur, lwd=2)
 
 
-
+	# print()
 
 }
