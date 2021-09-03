@@ -1,0 +1,13 @@
+endpoint	rs1967309_fac	male	AME	SE	p
+cad_prevalent_or_incident	A/A	Women	-0.0630487515	0.0381837647	0.0986992439
+cad_prevalent_or_incident	A/A	Men	0.0385945568	0.0272175023	0.1561892781
+cad_prevalent_or_incident	A/G	Women	0.0266817709	0.0217533477	0.2199882747
+cad_prevalent_or_incident	A/G	Men	-0.0219437287	0.0155789973	0.1589695626
+cad_prevalent_or_incident	G/G	Women	-0.0252110015	0.0248459889	0.3102531426
+cad_prevalent_or_incident	G/G	Men	-0.025886718	0.0177485989	0.1446967776
+mi_prevalent_or_incident	A/A	Women	-0.1469027321	0.0665377395	0.0272574731
+mi_prevalent_or_incident	A/A	Men	0.0546353597	0.0387518741	0.1585761295
+mi_prevalent_or_incident	A/G	Women	0.0377953178	0.0382419376	0.3229953653
+mi_prevalent_or_incident	A/G	Men	-0.0327234049	0.0217942968	0.133234965
+mi_prevalent_or_incident	G/G	Women	-0.0107468259	0.0441706672	0.8077712056
+mi_prevalent_or_incident	G/G	Men	-0.0048485472	0.0251156678	0.8469208231

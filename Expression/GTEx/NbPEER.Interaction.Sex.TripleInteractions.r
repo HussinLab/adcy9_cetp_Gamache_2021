@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-print('Figure 5 - Figure Supplement 1')
+print('Figure 5 - Figure Supplement 2')
 
 
 tissu=c('Artery-Tibial','Skin-SunExposed_Lowerleg')
@@ -14,15 +14,17 @@ for (organ in tissu) {
 	title=c()
 
 	for (i in unique(data$SexColor)) {
-		
 		for (y in unique(data$BetaSignPch)) {
+			# Extract values for the sex and coding
 			temp=data[data$SexColor==i & data$BetaSignPch==y,]
+
 
 			plot(x=temp$NbPEER,y=-log10(temp$Pvalue), type='l',ylim=(range(c(0,3,-log10(data$Pvalue)))),xlim=(range(c(0,data$NbPEER))), col=i, yaxt='n', xaxt='n',lwd=4,ylab='',xlab='', bty="n")
 			par(new=TRUE)
 
 
 		}
+		# Get number of individual
 		if(i=='#6e4bf8'){
 			title=paste(c('Male : ',unique(temp$Number)),collapse='')
 		}else{

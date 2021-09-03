@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
 library('ggplot2')
-print('Figure 5d')
+print('Figure 5c,d')
 
 ######################################
 #####		 	  				######
@@ -24,7 +24,7 @@ print(ggplot(allData,aes(y=Resid,fill=rs1967309,x=Geno))+geom_boxplot(outlier.sh
 dev.off()
 
 
-pdf('CETP.rs1967309-rs158477.Hg38.GTEx.ArteryTibial.25PEER.pdf',width=7, height=7)
+pdf('CETP.rs1967309-rs158477.Hg38.GTEx.ArteryTibial.10PEER.pdf',width=7, height=7)
 
 
 # This file contains residual of CETP expression made on CETP expression, corrected for all covariates (no SNPs)

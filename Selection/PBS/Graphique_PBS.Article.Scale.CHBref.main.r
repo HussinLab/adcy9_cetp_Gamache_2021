@@ -2,7 +2,7 @@
 library("data.table")
 library("scales")
 
-print('Figure 2c & 4a,b')
+print('Figure 2c')
 
 
 freadf <- function(...) return(as.data.frame(fread(...)))
